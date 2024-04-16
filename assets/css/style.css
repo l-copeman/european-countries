@@ -9,6 +9,86 @@
 }
 
 body {
-    background: lightblue;
+    background: rgb(239, 242, 242);
     font-family: Outfit, sans-serif;
+}
+
+.banner {
+    background: url(../images/europe-banner.jpeg) no-repeat center/cover;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    height: 150x;
+}
+
+h1 {
+    text-align: right;
+    margin-top: 0.5px;
+    margin-bottom: 0.5em;
+    font-size: 25px;
+    padding-right: 5px;
+}
+
+.user-details {
+    margin: auto ;
+    text-align: center;
+    background-color: bisque;
+    width: 70%;
+    margin-top: 150px;
+}
+
+#name {
+    margin-top: 0.5em;
+}
+
+#capitals {
+    margin-top: 0.5em ;
+}
+
+#flags {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.score-area {
+    background-color: lightcoral;
+    width: 100%;
+    margin-top: 3em;
+/*    position: absolute;
+    bottom: 5em; */
+    text-align: center;
+}
+
+.question-area {
+    background-color: lightsteelblue;
+    width: 70%;
+    margin: auto;
+    margin-top: 3em;
+}
+
+.answer-area {
+    background-color: lightgreen;
+    width: 70%;
+    margin: auto;
+    margin-top: 3em;
+    padding: 0.5em;
+}
+
+.start {
+    margin: auto;
+    margin-top: 1em;
+    width: 20%;
+    text-align: center;
+}
+
+#start {
+    border-radius: 50%;
+    height: 50px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#start:hover {
+    background-color: lightblue;
 }

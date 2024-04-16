@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Meta tags for search engines-->
-    <meta name="description" content="Interactive game, testing users knowlesge of European Cities and flags.">
-    <meta name="keywords" content="game, Europe, cities, flags, fun, knowledge">
+    <meta name="description" content="Interactive game, testing users knowledge of European capital cities and flags.">
+    <meta name="keywords" content="game, Europe, capitals, cities, flags, fun, knowledge">
     <meta name="author" content="Lee Copeman">
     <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -20,7 +20,9 @@
 </head>
 
 <body>
-    <h1>European Countries Challenge <i class="fa-solid fa-earth-europe"></i></h1>
+    <div class="banner">
+        <h1>European<br>Countries Challenge</h1>
+    </div>
     <div class="user-details">
         <div>
             <label for="name">Name:</label>
@@ -36,15 +38,20 @@
         </div>
     </div>
     <div class="start">
-        <button>START</button>
+        <button id="start">START</button>
     </div>
     <div class="question-area">
         <p class="question">Question Test</p>
     </div>
     <div class="answer-area">
         <p class="answer">Answer Test</p>
+        <input type="text">
+        <input type="submit">
     </div>
-    <div class="score-area"></div>
+    <div class="score-area">
+        <p>Correct: <span id="correct-score">0</span></p>
+        <p>Incorrect: <span id="incorrect-score">0</span></p>
+    </div>
 
     <!--Font Awesome Kit and Javascript link-->
     <script src="https://kit.fontawesome.com/cd1fc6e5ef.js" crossorigin="anonymous"></script>
