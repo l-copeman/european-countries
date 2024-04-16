@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Meta tags for search engines-->
+    <meta name="description" content="Interactive game, testing users knowlesge of European Cities and flags.">
+    <meta name="keywords" content="game, Europe, cities, flags, fun, knowledge">
+    <meta name="author" content="Lee Copeman">
+    <!--Stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!--Title-->
+    <title>European Countries</title>
 </head>
+
 <body>
-    <h1>Test</h1>
+    <h1>European Countries Challenge <i class="fa-solid fa-earth-europe"></i></h1>
+    <div class="user-details">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="capitals">Capital Cities</label>
+            <input type="radio" id="capitals" name="question-type">
+        </div>
+        <div>
+            <label for="flags">Flags</label>
+            <input type="radio" id="flags" name="question-type">
+        </div>
+    </div>
+    <div class="start">
+        <button>START</button>
+    </div>
+    <div class="question-area">
+        <p class="question">Question Test</p>
+    </div>
+    <div class="answer-area">
+        <p class="answer">Answer Test</p>
+    </div>
+    <div class="score-area"></div>
+
+    <!--Font Awesome Kit and Javascript link-->
+    <script src="https://kit.fontawesome.com/cd1fc6e5ef.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
