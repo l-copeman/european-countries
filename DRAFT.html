@@ -1,83 +1,105 @@
-console.log('start');
-
-document.getElementById('start').addEventListener('click', createQuestions());
+document.getElementById('start').addEventListener('click', function(event)); {
+    if (event.click) {
+        createQuestions();
+    }
+    console.log('start has been clicked');
+}
 
 /* Array of questions to ask */
-const = questionsCities
-[
+const = questionsCities [
     {
         question: 'What is the capital of France?',
         answer: 'Paris',
     },
-    {
+     {
         question: 'What is the capital of Spain?',
         answer: 'Madrid',
     },
-    {
+     {
         question: 'What is the capital of Hungary?',
         answer: 'Budapest',
     },
-    {
+     {
         question: 'What is the capital of Finland?',
         answer: 'Helsinki',
     },
-    {
+     {
         question: 'What is the capital of Norway?',
         answer: 'Oslo',
     },
-    {
+     {
         question: 'What is the capital of Bulgaria?',
         answer: 'Sofia',
     },
-    {
+     {
         question: 'What is the capital of Austria?',
         answer: 'Vienna',
     },
-    {
+     {
         question: 'What is the capital of Croatia?',
         answer: 'Zagreb',
     },
-    {
+     {
         question: 'What is the capital of Latvia?',
         answer: 'Riga',
     },
-    {
+     {
         question: 'What is the capital of Slovenia?',
         answer: 'Ljubljana',
     },
-    {
+     {
         question: 'What is the capital of Russia?',
         answer: 'Moscow',
     },
-    {
+     {
         question: 'What is the capital of United Kingdom?',
         answer: 'London',
     },
-    {
+     {
         question: 'What is the capital of Ireland?',
         answer: 'Dublin',
     },
-    {
+     {
         question: 'What is the capital of Ukraine?',
         answer: 'Kiev',
     },
-    {
+     {
         question: 'What is the capital of Romania?',
         answer: 'Bucharest',
     },
-    {
+     {
         question: 'What is the capital of Germany?',
         answer: 'Berlin',
     },
-    {
+     {
         question: 'What is the capital of Netherlands?',
         answer: 'Amsterdam',
     },
-];
+]
 
 function createQuestions() {
-    console.log("create questions")
-};
-function displayQuestion() { };
-function checkAnswer() { };
-function correctScore() { };
+  let random = Math.floor(Math.random() * questionsCities.length);
+  return questionsCities[randomIndex];
+}
+
+function displayQuestion(maxQuestions) {
+  let quiz = document.getElementById("question");
+  let numQuestionsDisplayed = 0;
+
+  // Loop until max number of questions are displayed
+  while (numQuestionsDisplayed < maxQuestions) {
+    let question = createQuestions();
+
+    // Add the question to the quiz
+    let questionDiv = document.createElement("div");
+    questionDiv.innerHTML = question;
+    quiz.appendChild(questionDiv);
+
+    // Increment the number of questions displayed
+    numQuestionsDisplayed++;
+  }
+}
+
+createQuestions();
+// Call the function to display the quiz (10 questions in this example)
+displayQuestion(10);
