@@ -77,6 +77,20 @@ const = questionsCities [
     },
 ]
 
+let randomIndex = Math.floor(Math.random() * questionsCities.length);
+console.log(randomIndex);
+let random = questionsCities[randomIndex].question;
+console.log(random);
+ 
+let answer = questionsCities[randomIndex].answer;
+console.log(answer);
+
+if (i=0, i < 10, i++) {
+
+}
+
+return [random, answer];
+
 function createQuestions() {
   let random = Math.floor(Math.random() * questionsCities.length);
   return questionsCities[randomIndex];
@@ -103,3 +117,12 @@ function displayQuestion(maxQuestions) {
 createQuestions();
 // Call the function to display the quiz (10 questions in this example)
 displayQuestion(10);
+
+
+// Loop until max number of questions are displayed
+if (numQuestionsDisplayed < maxQuestions) {
+    quiz.innerHTML.content = question[1];                       removed  Friday 20.30 
+    checkAnswer();
+} else {
+    correctScore()
+}
