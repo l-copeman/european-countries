@@ -2,8 +2,9 @@ console.log('start');
 
 document.getElementById('start').addEventListener('click', createQuestions());
 
+function createQuestions() {
 /* Array of questions to ask */
-const = questionsCities
+const questionsCities = 
 [
     {
         question: 'What is the capital of France?',
@@ -74,10 +75,13 @@ const = questionsCities
         answer: 'Amsterdam',
     },
 ];
+    let randomIndex = Math.floor(Math.random() * questionsCities.length);
+    let random = console.log(questionsCities[randomIndex]);
+    return console.log(random);
+  }
 
-function createQuestions() {
-    console.log("create questions")
-};
+
+
 function displayQuestion() { };
 function checkAnswer() { };
 function correctScore() { };
