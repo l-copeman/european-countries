@@ -1,14 +1,21 @@
-console.log('start');
-
 // Add event listener to to fire when the HTML docuement has fully loaded and parsed 
+
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
-  });
 
+    // Add event listener to start button and name input to begin game
+    let click = document.getElementById('start');
+    let name = document.getElementById('name');
+    let hide = document.getElementsByClassName('hide');
+    click.addEventListener('click', () => {
+        if (name.value == "") {
+            alert ('Please enter a name!')
+        } else {
+            displayQuestion()
+        }})
 
-// Add event listener to start button to begin game
-let click = document.getElementById('start');
-click.addEventListener('click', createQuestions())
+});
+
 
 /**
  * Creates a random array of questions from the array given
@@ -101,40 +108,61 @@ function createQuestions() {
     console.log(randomAnswer);
 
     return [randomQuestion, randomAnswer];
-    
+
 }
 
 /**
- * Creates div and displays question
+ * Creates div for questions
  */
-function displayQuestion(maxQuestions) {
+function displayQuestionDiv() {
 
-    let quiz = document.getElementById("question");
-    
-    // Add the question to the quiz
-    let question = createQuestions()[0];
-    let questionDiv = document.createElement("div");
-    questionDiv.innerHTML = question;
-    quiz.appendChild(questionDiv);
+    let questionElement = document.getElementById('question');
+    let questionDiv = document.createElement('div');
 
-    checkAnswer();
+    questionElement.appendChild(questionDiv);
+
+    console.log('question div created');
+
+    return questionDiv;
+
 }
 
+/**
+ * Displays question
+ */
+function displayQuestion() {
 
+    let question = createQuestions()[0];
+    displayQuestionDiv().innerHTML = question;
 
+    createAnswerDiv();
+}
 
-// Call the function to display the quiz
-displayQuestion(9);
+/**
+ * Creates div to enter answer
+ */
+function createAnswerDiv() {
+
+    let answer = document.getElementById('answer');
+    let answerDiv = document.createElement('div');
+    answer.appendChild(answerDiv);
+
+    console.log('answer Div created');
+
+    checkAnswer();
+
+}
 
 /**
  * Checks whether users answer matches the actual answer
  */
 function checkAnswer() {
-    
+
     let userAnswer = document.getElementById('answer');
     let actualAnswer = createQuestions()[1];
-    console.log(actualAnswer);
     
+    console.log(actualAnswer);
+
     if (userAnswer === actualAnswer) {
         console.log('correct answer');
         correctTally();
@@ -159,7 +187,9 @@ function correctTally() {
  * Adds 1 to the current incorrect score tally from the DOM
  */
 function incorrectTally() {
-console.log('incorrect-added')
+    
+    console.log('incorrectTallyAdded')
+    
     let incorrectScore = parseInt(document.getElementById("incorrect-score").innerText);
     document.getElementById("incorrect-score").innerText = ++incorrectScore;
 
@@ -168,4 +198,4 @@ console.log('incorrect-added')
 /**
  * Calculates final total of correct answers
  */
-function finalScore() {};
+function finalScore() { };

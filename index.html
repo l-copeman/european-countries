@@ -25,28 +25,20 @@
     </header>
     <main>
         <section class="user-details">
-            <div>
+            <div class="hide">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            <div>
-                <label for="capitals">Capital Cities</label>
-                <input type="radio" id="capitals" name="question-type">
-            </div>
-            <div>
-                <label for="flags">Flags</label>
-                <input type="radio" id="flags" name="question-type">
-            </div>
         </section>
-        <div class="start">
+        <div class="start, hide">
             <button id="start">START</button>
         </div>
         <section class="question-area">
             <div id="question"></div>
         </section>
         <section class="answer-area">
-            <div>Answer Test
-                <input type="text" id="answer">
+            <div id="answer">Answer Test
+                <input type="text">
                 <input type="submit">
             </div>
         </section>
