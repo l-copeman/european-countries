@@ -1,9 +1,20 @@
-/* console.log('start');
+console.log('start');
 
-document.getElementById('start').addEventListener('click', createQuestions()); */
+// Add event listener to to fire when the HTML docuement has fully loaded and parsed 
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM fully loaded and parsed");
+  });
 
+
+// Add event listener to start button to begin game
+let click = document.getElementById('start');
+click.addEventListener('click', createQuestions())
+
+/**
+ * Creates a random array of questions from the array given
+ */
 function createQuestions() {
-    /* Array of questions to ask */
+    // Array of questions to ask
     const questionsCities =
         [
             {
@@ -93,10 +104,13 @@ function createQuestions() {
     
 }
 
+/**
+ * Creates div and displays question
+ */
 function displayQuestion(maxQuestions) {
 
     let quiz = document.getElementById("question");
-    let numQuestionsDisplayed = 0;
+    
     // Add the question to the quiz
     let question = createQuestions()[0];
     let questionDiv = document.createElement("div");
@@ -112,16 +126,46 @@ function displayQuestion(maxQuestions) {
 // Call the function to display the quiz
 displayQuestion(9);
 
+/**
+ * Checks whether users answer matches the actual answer
+ */
 function checkAnswer() {
+    
     let userAnswer = document.getElementById('answer');
     let actualAnswer = createQuestions()[1];
     console.log(actualAnswer);
+    
     if (userAnswer === actualAnswer) {
         console.log('correct answer');
+        correctTally();
     } else {
-        console.log('incorrect answer');
+        console.log('Incorrect answer');
+        incorrectTally();
     }
 
 };
 
-function correctScore() { };
+/**
+ * Adds 1 to the current correct score tally from the DOM
+ */
+function correctTally() {
+
+    let score = parseInt(document.getElementById("correct-score").innerText);
+    document.getElementById("correct-score").innerText = ++score;
+
+};
+
+/**
+ * Adds 1 to the current incorrect score tally from the DOM
+ */
+function incorrectTally() {
+console.log('incorrect-added')
+    let incorrectScore = parseInt(document.getElementById("incorrect-score").innerText);
+    document.getElementById("incorrect-score").innerText = ++incorrectScore;
+
+};
+
+/**
+ * Calculates final total of correct answers
+ */
+function finalScore() {};
