@@ -1,18 +1,23 @@
-// Add event listener to to fire when the HTML docuement has fully loaded and parsed 
+let questionNumberIndex = 0
+let shuffleQuestions = createQuestions();
 
+// Add event listener to to fire when the HTML docuement has fully loaded and parsed 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
 
     // Add event listener to start button and name input to begin game
-    let click = document.getElementById('start');
-    let name = document.getElementById('name');
-    let hide = document.getElementsByClassName('hide');
+    const click = document.getElementById('start');
+    const name = document.getElementById('name');
+    const hide = document.getElementsByClassName('hide');
     click.addEventListener('click', () => {
         if (name.value == "") {
-            alert ('Please enter a name!')
+            alert('Please enter a name!')
         } else {
-            displayQuestion()
-        }})
+
+            console.log(shuffleQuestions);
+            displayQuestion(shuffleQuestions)
+        }
+    })
 
 });
 
@@ -100,14 +105,16 @@ function createQuestions() {
         randomArray.push(questionsCities[randomIndex]);
         questionsCities.splice(randomIndex, 1);
     }
+    console.log(randomArray);
+    return randomArray;
 
-    let randomQuestion = randomArray[0].question;
-    console.log(randomQuestion);
+    // let randomQuestion = randomArray[0].question;
+    // console.log(randomQuestion);
 
-    let randomAnswer = randomArray[0].answer;
-    console.log(randomAnswer);
+    // let randomAnswer = randomArray[0].answer;
+    // console.log(randomAnswer);
 
-    return [randomQuestion, randomAnswer];
+    // return [randomQuestion, randomAnswer];
 
 }
 
@@ -130,10 +137,13 @@ function displayQuestionDiv() {
 /**
  * Displays question
  */
-function displayQuestion() {
+function displayQuestion(shuffleQuestions) {
 
-    let question = createQuestions()[0];
-    displayQuestionDiv().innerHTML = question;
+    let currentQuestion = shuffleQuestions[questionNumberIndex];
+    console.log(currentQuestion);
+    console.log(currentQuestion.question);
+    console.log(currentQuestion.answer);
+        displayQuestionDiv().innerHTML = currentQuestion.question;
 
     createAnswerDiv();
 }
@@ -149,9 +159,12 @@ function createAnswerDiv() {
 
     console.log('answer Div created');
 
-    checkAnswer();
+   // checkAnswer();
 
 }
+
+const submit = document.getElementById('submit');
+submit.addEventListener('click', checkAnswer());
 
 /**
  * Checks whether users answer matches the actual answer
@@ -159,9 +172,8 @@ function createAnswerDiv() {
 function checkAnswer() {
 
     let userAnswer = document.getElementById('answer');
-    let actualAnswer = createQuestions()[1];
-    
-    console.log(actualAnswer);
+    let actualAnswer = shuffleQuestions[questionNumberIndex];
+        console.log(actualAnswer);
 
     if (userAnswer === actualAnswer) {
         console.log('correct answer');
@@ -170,6 +182,9 @@ function checkAnswer() {
         console.log('Incorrect answer');
         incorrectTally();
     }
+
+    questionNumberIndex++;
+    displayQuestion;
 
 };
 
@@ -187,9 +202,9 @@ function correctTally() {
  * Adds 1 to the current incorrect score tally from the DOM
  */
 function incorrectTally() {
-    
+
     console.log('incorrectTallyAdded')
-    
+
     let incorrectScore = parseInt(document.getElementById("incorrect-score").innerText);
     document.getElementById("incorrect-score").innerText = ++incorrectScore;
 

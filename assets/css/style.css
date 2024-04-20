@@ -92,3 +92,7 @@ h1 {
 #start:hover {
     background-color: lightblue;
 }
+
+/**.hide {
+    display: none;
+}
