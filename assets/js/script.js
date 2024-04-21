@@ -1,5 +1,10 @@
-let questionNumberIndex = 0
+let questionNumberIndex = 0;
+console.log(questionNumberIndex, 'test-top');
 let shuffleQuestions = createQuestions();
+
+console.log(shuffleQuestions[1]);
+console.log(shuffleQuestions[2]);
+console.log(shuffleQuestions[3]);
 
 // Add event listener to to fire when the HTML docuement has fully loaded and parsed 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -8,7 +13,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Add event listener to start button and name input to begin game
     const click = document.getElementById('start');
     const name = document.getElementById('name');
-    const hide = document.getElementsByClassName('hide');
+    //const hide = document.getElementsByClassName('hide');
     click.addEventListener('click', () => {
         if (name.value == "") {
             alert('Please enter a name!')
@@ -20,6 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
 });
+
 
 
 /**
@@ -140,10 +146,10 @@ function displayQuestionDiv() {
 function displayQuestion(shuffleQuestions) {
 
     let currentQuestion = shuffleQuestions[questionNumberIndex];
-    console.log(currentQuestion);
+    console.log(currentQuestion, 'test');
     console.log(currentQuestion.question);
     console.log(currentQuestion.answer);
-        displayQuestionDiv().innerHTML = currentQuestion.question;
+    displayQuestionDiv().innerHTML = currentQuestion.question;
 
     createAnswerDiv();
 }
@@ -159,12 +165,14 @@ function createAnswerDiv() {
 
     console.log('answer Div created');
 
-   // checkAnswer();
+    // checkAnswer();
 
 }
 
 const submit = document.getElementById('submit');
-submit.addEventListener('click', checkAnswer());
+submit.addEventListener('click', () => {
+    checkAnswer();
+});
 
 /**
  * Checks whether users answer matches the actual answer
@@ -172,8 +180,8 @@ submit.addEventListener('click', checkAnswer());
 function checkAnswer() {
 
     let userAnswer = document.getElementById('answer');
-    let actualAnswer = shuffleQuestions[questionNumberIndex];
-        console.log(actualAnswer);
+    let actualAnswer = shuffleQuestions[questionNumberIndex].answer;
+    console.log(actualAnswer, "test");
 
     if (userAnswer === actualAnswer) {
         console.log('correct answer');
@@ -183,8 +191,15 @@ function checkAnswer() {
         incorrectTally();
     }
 
-    questionNumberIndex++;
-    displayQuestion;
+    if (questionNumberIndex < 10) {
+        questionNumberIndex ++;
+        console.log(questionNumberIndex, 'test');
+        displayQuestion();
+    } else {
+        finalScore();
+        console.log(finalScore());
+    }
+
 
 };
 
