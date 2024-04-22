@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     })
 
+    document.getElementById("answer").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
+
 });
 
 
@@ -144,6 +150,10 @@ function displayQuestionDiv() {
  * Displays question
  */
 function displayQuestion(shuffleQuestions) {
+    
+    document.getElementById('answer').value = '';
+    
+    console.log(shuffleQuestions);
 
     let currentQuestion = shuffleQuestions[questionNumberIndex];
     console.log(currentQuestion, 'test');
@@ -195,7 +205,7 @@ function checkAnswer() {
     if (questionNumberIndex < 10) {
         questionNumberIndex ++;
         console.log(questionNumberIndex, 'test');
-        displayQuestion();
+        displayQuestion(shuffleQuestions);
     } else {
         finalScore();
         console.log(finalScore());
@@ -210,7 +220,9 @@ function checkAnswer() {
 function correctTally() {
 
     let score = parseInt(document.getElementById("correct-score").innerText);
-    document.getElementById("correct-score").innerText = ++score;
+    let newScore = document.getElementById("correct-score").innerText = ++score;
+
+    return newScore;
 
 };
 
@@ -229,4 +241,10 @@ function incorrectTally() {
 /**
  * Calculates final total of correct answers
  */
-function finalScore() { };
+function finalScore() {
+
+    const name = document.getElementById('name').value;
+
+    alert(`Well done ${name} you scored ${correctTally()}`);
+
+};
