@@ -179,9 +179,10 @@ submit.addEventListener('click', () => {
  */
 function checkAnswer() {
 
-    let userAnswer = document.getElementById('answer');
+    let userAnswer = document.getElementById('answer').value;
     let actualAnswer = shuffleQuestions[questionNumberIndex].answer;
-    console.log(actualAnswer, "test");
+    console.log('This is the actual answer', actualAnswer);
+    console.log(`This is what the user entered ${userAnswer}`);
 
     if (userAnswer === actualAnswer) {
         console.log('correct answer');
