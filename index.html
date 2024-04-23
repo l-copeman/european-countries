@@ -24,35 +24,35 @@
         <h1>European<br>Countries Challenge</h1>
     </header>
     <main>
-        <section class="user-details, start-page" id="start-page">
-            <p id="intro" class="start-page">Test your knowledge of European Capital Cities! Enter your name and click
-                Start
-                to begin</p>
-
-            <div>
-                <label for="name">Name:</label>
+        <section class="user-details start-page" id="start-page">
+            <p id="intro">Test your knowledge of European Capital Cities!<br>Enter your name and click
+                Start to begin</p>
+            <div class="name-div">
+                <label for="name" id="name-label">Name:</label>
                 <input type="text" id="name" name="name" required>
-            </div>
+            </div class="name-div">
             <div class="start-btn">
                 <button id="start">START</button>
             </div>
         </section>
-        <section class="question-area, question-page, hide" id="question-page">
+        <section class="question-area question-page hide" id="question-page">
             <div id="question"></div>
-            <div class="answer-area">Answer Test
-                <input type="text" id="answer">
+            <div class="answer-area">
+                <label for="answer" id="name-label">Answer:</label>
+                <input type="text" id="answer" name="answer">
                 <input type="submit" id="submit">
             </div>
-
-            <div class="score-area, question-page">
+            <div class="score-area question-page">
                 <p>Correct: <span id="correct-score">0</span></p>
                 <p>Incorrect: <span id="incorrect-score">0</span></p>
             </div>
         </section>
         <section id="results-page" class="hide">
-            <div id="final-score"></div>
-            <div>
-                <a href="index.html" aria-label="Send user back to home page to play again">Play Again</a>
+            <div class="message">
+                <p>Well done <span id="insert-name"></span> you scored<span id="final-score"></span></p>
+            </div>
+            <div class="return-home">
+                <a href="index.html" aria-label="Send user back to home page to play again" class="play-again">Play Again</a>
             </div>
         </section>
     </main>

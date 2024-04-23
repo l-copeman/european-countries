@@ -125,6 +125,30 @@ function createQuestions() {
                 question: 'What is the capital of Netherlands?',
                 answer: 'amsterdam',
             },
+            {
+                question: 'What is the capital of Greece?',
+                answer: 'athens',
+            },
+            {
+                question: 'What is the capital of Serbia?',
+                answer: 'belgrade',
+            },
+            {
+                question: 'What is the capital of Switzerland?',
+                answer: 'bern',
+            },
+            {
+                question: 'What is the capital of Belgium?',
+                answer: 'brussels',
+            },
+            {
+                question: 'What is the capital of Portugal?',
+                answer: 'lisbon',
+            },
+            {
+                question: 'What is the capital of Cyprus?',
+                answer: 'nicosia',
+            },
         ];
 
     let randomArray = [];
@@ -265,16 +289,19 @@ function finalScore() {
     resultsPage.classList.remove('hide');
     questionPage.classList.add('hide');
 
-    // let finalTally = document.getElementById('correct-score').value;
+    let finalTally = document.getElementById('correct-score').value;
     // document.getElementById('final-score').innerText = finalTally;
 
     // let correctTally() =  
 
-    // console.log(finalTally, 'final-score');
+    console.log(finalTally, 'final-score');
 
 
 
-    // const name = document.getElementById('name').value;
+    const name = document.getElementById('name').value;
+    console.log('users name is', name);
+    const insertName = document.getElementById('insert-name');
+    insertName.innerHTML = name
 
     // alert(`Well done ${name} you scored ${correctTally()}`);
 
