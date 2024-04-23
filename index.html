@@ -24,29 +24,37 @@
         <h1>European<br>Countries Challenge</h1>
     </header>
     <main>
-        <p>Test your knowledge of European Capital Cities! Enter your name and click Start to begin</p>
-        <section class="user-details">
-            <div class="hide">
+        <section class="user-details, start-page" id="start-page">
+            <p id="intro" class="start-page">Test your knowledge of European Capital Cities! Enter your name and click
+                Start
+                to begin</p>
+
+            <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
+            <div class="start-btn">
+                <button id="start">START</button>
+            </div>
         </section>
-        <div class="start, hide">
-            <button id="start">START</button>
-        </div>
-        <section class="question-area">
+        <section class="question-area, question-page, hide" id="question-page">
             <div id="question"></div>
-        </section>
-        <section class="answer-area">
-            <div>Answer Test
+            <div class="answer-area">Answer Test
                 <input type="text" id="answer">
                 <input type="submit" id="submit">
             </div>
+
+            <div class="score-area, question-page">
+                <p>Correct: <span id="correct-score">0</span></p>
+                <p>Incorrect: <span id="incorrect-score">0</span></p>
+            </div>
         </section>
-        <div class="score-area">
-            <p>Correct: <span id="correct-score">0</span></p>
-            <p>Incorrect: <span id="incorrect-score">0</span></p>
-        </div>
+        <section id="results-page" class="hide">
+            <div id="final-score"></div>
+            <div>
+                <a href="index.html" aria-label="Send user back to home page to play again">Play Again</a>
+            </div>
+        </section>
     </main>
     <footer></footer>
 

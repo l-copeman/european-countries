@@ -1,7 +1,11 @@
 let questionNumberIndex = 0;
-console.log(questionNumberIndex, 'test-top');
 let shuffleQuestions = createQuestions();
 
+// let introPage = document.getElementsByClassName('start-page');
+
+let startPage = document.getElementById('start-page');
+let questionPage = document.getElementById('question-page');
+// let resultsPage = document.getElementsByClassName('results-page');
 console.log(shuffleQuestions[1]);
 console.log(shuffleQuestions[2]);
 console.log(shuffleQuestions[3]);
@@ -20,14 +24,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
         } else {
 
             console.log(shuffleQuestions);
-            displayQuestion(shuffleQuestions)
+            displayQuestion(shuffleQuestions);
+
+            // document.getElementsByClassName('start-page').forEach(el=>el.classList.add('hide'));
+            // document.querySelectorAll('.question-page').forEach(el=>el.classList.remove('hide'));
+
+            startPage.classList.add('hide');
+            questionPage.classList.remove('hide');
+
         }
     })
 
-    document.getElementById("answer").addEventListener("keydown", function(event) {
+    document.getElementById("answer").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
+    });
+
+    const submit = document.getElementById('submit');
+    submit.addEventListener('click', () => {
+        checkAnswer();
     });
 
 });
@@ -43,71 +59,71 @@ function createQuestions() {
         [
             {
                 question: 'What is the capital of France?',
-                answer: 'Paris',
+                answer: 'paris',
             },
             {
                 question: 'What is the capital of Spain?',
-                answer: 'Madrid',
+                answer: 'madrid',
             },
             {
                 question: 'What is the capital of Hungary?',
-                answer: 'Budapest',
+                answer: 'budapest',
             },
             {
                 question: 'What is the capital of Finland?',
-                answer: 'Helsinki',
+                answer: 'helsinki',
             },
             {
                 question: 'What is the capital of Norway?',
-                answer: 'Oslo',
+                answer: 'oslo',
             },
             {
                 question: 'What is the capital of Bulgaria?',
-                answer: 'Sofia',
+                answer: 'sofia',
             },
             {
                 question: 'What is the capital of Austria?',
-                answer: 'Vienna',
+                answer: 'vienna',
             },
             {
                 question: 'What is the capital of Croatia?',
-                answer: 'Zagreb',
+                answer: 'zagreb',
             },
             {
                 question: 'What is the capital of Latvia?',
-                answer: 'Riga',
+                answer: 'riga',
             },
             {
                 question: 'What is the capital of Slovenia?',
-                answer: 'Ljubljana',
+                answer: 'ljubljana',
             },
             {
                 question: 'What is the capital of Russia?',
-                answer: 'Moscow',
+                answer: 'moscow',
             },
             {
                 question: 'What is the capital of United Kingdom?',
-                answer: 'London',
+                answer: 'london',
             },
             {
                 question: 'What is the capital of Ireland?',
-                answer: 'Dublin',
+                answer: 'dublin',
             },
             {
                 question: 'What is the capital of Ukraine?',
-                answer: 'Kiev',
+                answer: 'kiev',
             },
             {
                 question: 'What is the capital of Romania?',
-                answer: 'Bucharest',
+                answer: 'bucharest',
             },
             {
                 question: 'What is the capital of Germany?',
-                answer: 'Berlin',
+                answer: 'berlin',
             },
             {
                 question: 'What is the capital of Netherlands?',
-                answer: 'Amsterdam',
+                answer: 'amsterdam',
             },
         ];
 
@@ -133,56 +149,58 @@ function createQuestions() {
 /**
  * Creates div for questions
  */
-function displayQuestionDiv() {
+// function displayQuestionDiv() {
 
-    let questionElement = document.getElementById('question');
-    let questionDiv = document.createElement('div');
+//     let questionElement = document.getElementById('question');
+//     let questionDiv = document.createElement('div');
 
-    questionElement.appendChild(questionDiv);
+//     questionElement.appendChild(questionDiv);
 
-    console.log('question div created');
+//     console.log('question div created');
 
-    return questionDiv;
+//     return questionDiv;
 
-}
+// }
 
 /**
  * Displays question
  */
 function displayQuestion(shuffleQuestions) {
-    
+
     document.getElementById('answer').value = '';
-    
+
     console.log(shuffleQuestions);
 
     let currentQuestion = shuffleQuestions[questionNumberIndex];
     console.log(currentQuestion, 'test');
     console.log(currentQuestion.question);
     console.log(currentQuestion.answer);
-    displayQuestionDiv().innerHTML = currentQuestion.question;
+    let questionDiv = document.getElementById('question');
+    questionDiv.innerHTML = currentQuestion.question;
+    // displayQuestionDiv().innerHTML = currentQuestion.question;
 
-    createAnswerDiv();
+    // createAnswerDiv();
 }
 
 /**
  * Creates div to enter answer
  */
-function createAnswerDiv() {
+// function createAnswerDiv() {
 
-    let answer = document.getElementById('answer');
-    let answerDiv = document.createElement('div');
-    answer.appendChild(answerDiv);
+//     let answer = document.getElementById('answer');
+//     let answerDiv = document.createElement('div');
+//     answer.appendChild(answerDiv);
 
-    console.log('answer Div created');
+//     console.log('answer Div created');
 
-    // checkAnswer();
+//     // checkAnswer();
 
-}
+// }
 
-const submit = document.getElementById('submit');
-submit.addEventListener('click', () => {
-    checkAnswer();
-});
+// const submit = document.getElementById('submit');
+// submit.addEventListener('click', () => {
+//     checkAnswer();
+// });
 
 /**
  * Checks whether users answer matches the actual answer
@@ -190,11 +208,13 @@ submit.addEventListener('click', () => {
 function checkAnswer() {
 
     let userAnswer = document.getElementById('answer').value;
+    let lowerCase = userAnswer.toLowerCase();
+    console.log('lower-case', lowerCase);
     let actualAnswer = shuffleQuestions[questionNumberIndex].answer;
     console.log('This is the actual answer', actualAnswer);
     console.log(`This is what the user entered ${userAnswer}`);
 
-    if (userAnswer === actualAnswer) {
+    if (lowerCase === actualAnswer) {
         console.log('correct answer');
         correctTally();
     } else {
@@ -203,7 +223,7 @@ function checkAnswer() {
     }
 
     if (questionNumberIndex < 10) {
-        questionNumberIndex ++;
+        questionNumberIndex++;
         console.log(questionNumberIndex, 'test');
         displayQuestion(shuffleQuestions);
     } else {
@@ -220,9 +240,7 @@ function checkAnswer() {
 function correctTally() {
 
     let score = parseInt(document.getElementById("correct-score").innerText);
-    let newScore = document.getElementById("correct-score").innerText = ++score;
-
-    return newScore;
+    document.getElementById("correct-score").innerText = ++score;
 
 };
 
@@ -243,8 +261,21 @@ function incorrectTally() {
  */
 function finalScore() {
 
-    const name = document.getElementById('name').value;
+    let resultsPage = document.getElementById('results-page');
+    resultsPage.classList.remove('hide');
+    questionPage.classList.add('hide');
 
-    alert(`Well done ${name} you scored ${correctTally()}`);
+    // let finalTally = document.getElementById('correct-score').value;
+    // document.getElementById('final-score').innerText = finalTally;
+
+    // let correctTally() =  
+
+    // console.log(finalTally, 'final-score');
+
+
+
+    // const name = document.getElementById('name').value;
+
+    // alert(`Well done ${name} you scored ${correctTally()}`);
 
 };
