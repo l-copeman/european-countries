@@ -1,54 +1,36 @@
+/* jshint esversion: 11 */
+
 let questionNumberIndex = 0;
 let shuffleQuestions = createQuestions();
-
-// let introPage = document.getElementsByClassName('start-page');
-
 let startPage = document.getElementById('start-page');
 let questionPage = document.getElementById('question-page');
-// let resultsPage = document.getElementsByClassName('results-page');
-console.log(shuffleQuestions[1]);
-console.log(shuffleQuestions[2]);
-console.log(shuffleQuestions[3]);
+let score = 0;
 
 // Add event listener to to fire when the HTML docuement has fully loaded and parsed 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
-
     // Add event listener to start button and name input to begin game
     const click = document.getElementById('start');
     const name = document.getElementById('name');
-    //const hide = document.getElementsByClassName('hide');
     click.addEventListener('click', () => {
         if (name.value == "") {
             alert('Please enter a name!');
         } else {
-
-            console.log(shuffleQuestions);
             displayQuestion(shuffleQuestions);
-
-            // document.getElementsByClassName('start-page').forEach(el=>el.classList.add('hide'));
-            // document.querySelectorAll('.question-page').forEach(el=>el.classList.remove('hide'));
-
             startPage.classList.add('hide');
             questionPage.classList.remove('hide');
-
         }
-    })
-
+    });
     document.getElementById("answer").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             checkAnswer();
         }
     });
-
     const submit = document.getElementById('submit');
     submit.addEventListener('click', () => {
         checkAnswer();
     });
-
 });
-
-
 
 /**
  * Creates a random array of questions from the array given
@@ -157,154 +139,74 @@ function createQuestions() {
         randomArray.push(questionsCities[randomIndex]);
         questionsCities.splice(randomIndex, 1);
     }
-    console.log(randomArray);
     return randomArray;
-
-    // let randomQuestion = randomArray[0].question;
-    // console.log(randomQuestion);
-
-    // let randomAnswer = randomArray[0].answer;
-    // console.log(randomAnswer);
-
-    // return [randomQuestion, randomAnswer];
-
 }
-
-/**
- * Creates div for questions
- */
-// function displayQuestionDiv() {
-
-//     let questionElement = document.getElementById('question');
-//     let questionDiv = document.createElement('div');
-
-//     questionElement.appendChild(questionDiv);
-
-//     console.log('question div created');
-
-//     return questionDiv;
-
-// }
 
 /**
  * Displays question
  */
 function displayQuestion(shuffleQuestions) {
-
     document.getElementById('answer').value = '';
-
-    console.log(shuffleQuestions);
-
     let currentQuestion = shuffleQuestions[questionNumberIndex];
-    console.log(currentQuestion, 'test');
-    console.log(currentQuestion.question);
-    console.log(currentQuestion.answer);
     let questionDiv = document.getElementById('question');
     questionDiv.innerHTML = currentQuestion.question;
-    // displayQuestionDiv().innerHTML = currentQuestion.question;
-
-    // createAnswerDiv();
 }
-
-/**
- * Creates div to enter answer
- */
-// function createAnswerDiv() {
-
-//     let answer = document.getElementById('answer');
-//     let answerDiv = document.createElement('div');
-//     answer.appendChild(answerDiv);
-
-//     console.log('answer Div created');
-
-//     // checkAnswer();
-
-// }
-
-// const submit = document.getElementById('submit');
-// submit.addEventListener('click', () => {
-//     checkAnswer();
-// });
 
 /**
  * Checks whether users answer matches the actual answer
  */
 function checkAnswer() {
-
     let userAnswer = document.getElementById('answer').value;
+    //Change users answer to lowercase, to compare with actual answer which is also lowercase
     let lowerCase = userAnswer.toLowerCase();
-    console.log('lower-case', lowerCase);
     let actualAnswer = shuffleQuestions[questionNumberIndex].answer;
-    console.log('This is the actual answer', actualAnswer);
-    console.log(`This is what the user entered ${userAnswer}`);
-
+    // To prevent an empty answer box being submitted 
+    if (userAnswer == "") {
+        alert('Please enter an answer!');
+        return;
+    } else {
+        displayQuestion(shuffleQuestions);
+    }
     if (lowerCase === actualAnswer) {
-        console.log('correct answer');
         correctTally();
     } else {
-        console.log('Incorrect answer');
         incorrectTally();
     }
-
     if (questionNumberIndex < 9) {
         questionNumberIndex++;
-        console.log(questionNumberIndex, 'test');
         displayQuestion(shuffleQuestions);
     } else {
         finalScore();
-        console.log(finalScore());
     }
-
-
-};
-
-let score = 0;
+}
 
 /**
  * Adds 1 to the current correct score tally from the DOM
  */
 function correctTally() {
-
-    // let score = parseInt(document.getElementById("correct-score").innerText);
     document.getElementById("correct-score").innerText = ++score;
-
-};
+}
 
 /**
  * Adds 1 to the current incorrect score tally from the DOM
  */
 function incorrectTally() {
-
-    console.log('incorrectTallyAdded')
-
     let incorrectScore = parseInt(document.getElementById("incorrect-score").innerText);
     document.getElementById("incorrect-score").innerText = ++incorrectScore;
-
-};
+}
 
 /**
- * Calculates final total of correct answers
+ * Loads results page, showing users final score
  */
 function finalScore() {
-
     let resultsPage = document.getElementById('results-page');
     resultsPage.classList.remove('hide');
     questionPage.classList.add('hide');
-
-   // let finalTally = document.getElementById('correct-score').value;
-     document.getElementById('final-score').innerText = score;
-
-    // let correctTally() =  
-
-    //console.log(finalTally, 'final-score');
-
-
+    // Add final score to completion message
+    document.getElementById('final-score').innerText = score;
     // Take users name to personalise completion message
     const name = document.getElementById('name').value;
-    console.log('users name is', name);
+    const capsName = name.toUpperCase();
     const insertName = document.getElementById('insert-name');
-    insertName.innerHTML = name
-
-   // alert(`Well done ${name} you scored ${score}`);
-
-};
+    insertName.innerHTML = capsName;
+}
