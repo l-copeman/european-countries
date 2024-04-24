@@ -36,101 +36,76 @@ The site can be accessed by this [link](https://l-copeman.github.io/european-cou
 * The position is fixed, so the header is always visible throughout the game.
 * The name of the game is written on the right of the header.
     * The name is responsive, enlarging for bigger screen sizes.
-* Navigation links are positioned on the right of the nav bar:
-    * HOME - takes the user to the home page.
-    * CLASSES - takes the user to the classes page, where different classes can be viewed.
-    * SIGN-UP - takes the user to the sign-up page, where they can fill a form to receive information about social events. and upcoming classes.
-* The links are animated with hover effect.    
-
+* The background image for the header is a map of Europe.
+   
 ---
 
 - ### Footer
 
-![Footer](documentation/footer-screenshot.jpeg)
+![Footer](documentation/footer.jpeg)
 
 * The footer is positioned at the bottom of the page.
-* It contains links for each of our social media pages
-    * Facebook
-    * X
-    * Instagram
-* Each link is represented by an icon for the relevant social media page.
-* They are all positioned in the center of the footer.
-* Each link will open in a new page    
-
-- ### Main Page
-
-* The page is dominated by an image of a young family, in a relaxed happy environment.
-* The groups tagline is displayed which serves to clarify the thought of the page.
-
-![Landing Image](documentation/landing-image.jpeg)
-
-* Towards the bottom of the page are four areas of text. These give the user key information of the groups goals.
-    * This text is repsonsive. The text-size increases for larger screens and their containers change size accordingly.
-
-![About Text](documentation/about-text.jpeg)
+* It contains the author for the game.
+* There is a link to the authors GitHub Page via an icon.
+* The link has hover properties and opens in a new page.  
 
 ---
 
-- ### Classes Page
+- ### Start section
 
-* At the top of the page is a heading, informing the user that a selection of classes can be viewed.
-* There is a circular image, showing children playing in a friendly environemnt.
-    * This image is responsive. The height increases for larger screens.
+* The page has a short paragraph informing the user what the game is about.
+* It instructs users to enter their name and click start to begin the game.
+* Names are to be entered inside the input field.
+* If no name is entered before clicking start, an alert will pop-up to remind the user to enter a name.
+* A circular button labelled 'Start' is clicked to begin the game.
 
-![Classes Screenshot](documentation/classes-image.jpeg)
+![Start section](documentation/start-section.jpeg)
 
-* There are links to each specific day of the week, for the relevant classes. The links are animated with hover effect.
-* Each day of the week has its own heading.
-* Each class contains:
-    * The name of the class.
-    * The age group for the class.
-    * A short description of the class.
-    * The venue for the class.
-    * A link to the class website, where you can book. (link opens in new tab)
+* The text is responsive, increasing in size for larger screen sizes.
 
-![Monday Screenshot](documentation/monday-class.jpeg)    
+
+---
+
+- ### Questions section
+
+* The question is displayed in large text within a golden yellow banner.
+* There is an answer area where the user can input their answer.
+* If no answer is entered, the user is alerted to enter an answer before continuing.
+* There is a submit input to click to check the answer. (the user can also use the enter key).
+* After an answer has been submitted it is checked and added to the score.
+
+![Questions section](documentation/questions-section.jpeg)
+
+* Towards the bottom of the section is the score area.
+* Correct scores are talleyed and displayed after a correct answer.
+* Incorrect scores are talleyed and displayed after an incorrect answer.
+* Another question is then shown.
+* 10 questions are asked in total, before the game finishes.
+* The text is responsive, increasing in size for larger screen sizes.
 
 --- 
 
-- ### Sign-up Page
+- ### Results section
 
-* At the top of the page is a heading, informing the user that they can sign-up to hear about social events and upcoming classes.
-* There is a circular image, showing hands in a group, representing togetherness.
-    * This image is responsive. The height increases for larger screens.
-* There is a button with a link to the form below, ensuring users are aware of the form and where to find it.
+* After 10 questions have been answered, the user is shown the results section.
+* A personalised message is displayed, showing the users name and their final score.
+* There is a button with a link to allow the user to play again.
 
-![Signup screenshot](documentation/signup-image.jpeg)
-
-* Users can fill in the form to keep updated of social events and classes.
-* The form ask users for:
-    * First Name
-    * Second Name
-    * Email Address
-    * Age of their children. 
-* All fields are mandatory 
-* The Submit button can be clicked when all information has been entered.
-
-![Form Screenshot](documentation/form-screenshot.jpeg)
-
----
-
-- ### Responses Page
-
-* In the center of the page is a thank you message, for signing up to our community.
-* A 'Back to Home Page' button has been added to easily direct users back to the home page.
-
-![Responses Screenshot](documentation/responses-screenshot.jpeg)
+![Signup screenshot](documentation/results-section.jpeg)
 
 ---
 
 ### Technologies Used
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - was used as the foundation of the site.
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
-- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - was used to arrange items on the pages.
-- [Balsamiq](https://balsamiq.com/) - was used to make wireframes for the website.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - was used as the foundation of the game.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the game.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/javascript) - was used to arrange items on the pages.
+- [Balsamiq](https://balsamiq.com/) - was used to make wireframes for the game.
+- [Miro](https://miro.com/app/) - was used to create a workflow.
 - [Gitpod](https://www.gitpod.io/) - was used as the main tool to write and edit code.
 - [GitHub](https://github.com/) - was used to host the code of the website.
+- [PineTools](https://pinetools.com/) - was used to find colors from image.
+
 
 ---
 
@@ -138,26 +113,26 @@ The site can be accessed by this [link](https://l-copeman.github.io/european-cou
 
 ### Colour
 
-![Colours Screenshot](documentation/colours-screenshot.jpeg)
+![Colours Screenshot](documentation/colors.jpeg)
 
-* Light pink colour was used for header and footer sections, as well as form background. I chose it because it evokes memories of childhood, whilst also being a warm and comforting colour.
-* A dark blue colour was used for classes and responses pages background, as well as other details. I chose it because it contrasts well with the pink used and is associated with knowledge, authority, and reliability.
-* A darker shade of pink was used on the classes page and sign-up page. This darker shade is a calming colour associated with love and kindness.
+* The shades of blue were taken from the image and used throughout the styling of the game.
+* The main background of the game is the lighter blue from the image.
+* The dark blue is used for the footer and the buttons.
+* A golden yellow was used as a banner for the name area and when displaying questions, as well as some border styling. It was chosen as it contrasts well with the blue. The blue and gold also have associations with Europe from the flag of the European Union.
+* A coral shade of pink was used for the score area. This ensures the area stands out and contrasts well with the light blue background.
 
 ### Typography
 
-![Font Screenshot](documentation/font-screenshot.jpeg)
+![Font Screenshot](documentation/font-family.jpeg)
 
-* Mulish was used as the main font of the website in order to increase readability of the content on the pages.
+* Outfit was used as the main font of the game in order to increase readability of the content on the pages.
 
 
 ### Wireframe
 
-* I used Balsamiq to create wireframes of my ideas
+* I used Balsamiq to create a wireframe of my idea
 
-![Wireframe Mobile](documentation/wireframe.jpeg)
-
-![Wireframe Laptop](documentation/wireframe2.jpeg)
+![Wireframe](documentation/wireframe.jpeg)
 
 ---
 
@@ -165,7 +140,7 @@ The site can be accessed by this [link](https://l-copeman.github.io/european-cou
 
 ### Compatibility
 
-In order to confirm the correct functionality, responsiveness and appearance the website wastested on: 
+In order to confirm the correct functionality, responsiveness and appearance the gane was tested on: 
 
 * Chrome
 
@@ -181,11 +156,11 @@ In order to confirm the correct functionality, responsiveness and appearance the
 
 ### Responsiveness
 
-In orfer to cofirm the responsiveness of the site, devtools was used to check the website on different screen sizes:
+In orfer to cofirm the responsiveness of the game, devtools was used to check the game on different screen sizes:
 
 * Phone
 
-![Phone Test](documentation/phone-test.jpeg) 
+![Phone Test](documentation/mobile-test.jpeg) 
 
 * Tablet
 
@@ -201,35 +176,22 @@ In orfer to cofirm the responsiveness of the site, devtools was used to check th
 
 - #### HTML
 
-#### Home Page
-
 No errors or warnings were found when passing through the official W3C validator.
 
-![Home Validator](documentation/home-validator.jpeg)
+![HTML Validator](documentation/html-validator.jpeg)
 
-### Classes Page
-
-No errors or warnings were found when passing through the official W3C validator.
-
-![Classes Validator](documentation/classes-validator.jpeg)
-
-### Sign-up Page
-
-No errors or warnings were found when passing through the official W3C validator.
-
-![Sign-up Validator](documentation/signup-validator.jpeg)
-
-#### Responses Page
-
-No errors or warnings were found when passing through the official W3C validator.
-
-![Responses Validator](documentation/responses-validator.jpeg)
 
 - #### CSS
 
 No errors or warnings were found when passing through the official W3C (Jigsaw) validator.
 
 ![CSS Validator](documentation/css-validator.jpeg)
+
+- #### JavaScript
+
+No errors or warnings were found when passing through the official jshint validator.
+
+![JavaScript Validator](documentation/javascript-validator.jpeg)
 
 ---
 
