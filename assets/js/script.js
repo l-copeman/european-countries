@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //const hide = document.getElementsByClassName('hide');
     click.addEventListener('click', () => {
         if (name.value == "") {
-            alert('Please enter a name!')
+            alert('Please enter a name!');
         } else {
 
             console.log(shuffleQuestions);
@@ -246,7 +246,7 @@ function checkAnswer() {
         incorrectTally();
     }
 
-    if (questionNumberIndex < 10) {
+    if (questionNumberIndex < 9) {
         questionNumberIndex++;
         console.log(questionNumberIndex, 'test');
         displayQuestion(shuffleQuestions);
@@ -258,12 +258,14 @@ function checkAnswer() {
 
 };
 
+let score = 0;
+
 /**
  * Adds 1 to the current correct score tally from the DOM
  */
 function correctTally() {
 
-    let score = parseInt(document.getElementById("correct-score").innerText);
+    // let score = parseInt(document.getElementById("correct-score").innerText);
     document.getElementById("correct-score").innerText = ++score;
 
 };
@@ -289,12 +291,12 @@ function finalScore() {
     resultsPage.classList.remove('hide');
     questionPage.classList.add('hide');
 
-    let finalTally = document.getElementById('correct-score').value;
-    // document.getElementById('final-score').innerText = finalTally;
+   // let finalTally = document.getElementById('correct-score').value;
+     document.getElementById('final-score').innerText = score;
 
     // let correctTally() =  
 
-    console.log(finalTally, 'final-score');
+    //console.log(finalTally, 'final-score');
 
 
 
@@ -303,6 +305,6 @@ function finalScore() {
     const insertName = document.getElementById('insert-name');
     insertName.innerHTML = name
 
-    // alert(`Well done ${name} you scored ${correctTally()}`);
+   // alert(`Well done ${name} you scored ${score}`);
 
 };
