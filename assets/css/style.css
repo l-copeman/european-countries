@@ -16,7 +16,7 @@ body {
 .banner {
     background: url(../images/europe-banner.jpeg) no-repeat center/cover;
     border-bottom-style: solid;
-    border-color: gold; 
+    border-color: rgb(255, 215, 0); 
     width: 100%;
     position: fixed;
     top: 0;
@@ -60,14 +60,14 @@ h1 {
     margin-right: 30px;
     font-size: 17px;
     padding: 8px;
-    background-color: gold;
+    background-color: rgb(255, 215, 0);
     border-radius: 5px; 
 }
 
 .name-div {
     text-align: center;
     margin-top: 60px;
-    background-color: gold;
+    background-color: rgb(255, 215, 0);
     border-radius: 3%;
     margin-left: 40px;
     margin-right: 40px;
@@ -88,18 +88,20 @@ h1 {
     font-weight: bold;
     font-size: 30px;
     margin-top: 150px;
-    background-color: gold;
+    background-color: rgb(255, 215, 0);
     border-radius: 5px;
     margin-left: 30px;
     margin-right: 30px;
 }
 
 .score-area {
-    background-color: lightcoral;
+    background-color: rgb(240, 128, 128);
     margin-top: 200px;
     margin-left: 40px;
     margin-right: 40px;
     text-align: center;
+    border-radius: 5px;
+    border: 3px solid rgb(255, 215, 0);
 }
 
 .score-area p{
@@ -125,7 +127,7 @@ h1 {
 #start {
     background-color: rgb(48, 81, 126);
     border-radius: 50%;
-    border: 3px solid gold;
+    border: 3px solid rgb(255, 215, 0);
     height: 70px;
     width: 70px;
     padding: 5px;
@@ -135,12 +137,23 @@ h1 {
     font-size: 17px;
 }
 
+#submit {
+    background-color: rgb(255, 215, 0);
+    padding: 3px;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+#submit:hover {
+    background-color: rgb(173, 216, 230);
+}
+
 #start:hover {
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
 }
 
 .return-home a:hover {
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
 }
 
 /* A class to allow differet elements to show and hide during the game */
@@ -160,7 +173,7 @@ h1 {
 .play-again {
     background-color: rgb(48, 81, 126);
     border-radius: 50%;
-    border: 3px solid gold;
+    border: 3px solid rgb(255, 215, 0);
     padding: 10px;
     font-weight: bold;
     color: #ffffff;
@@ -173,7 +186,7 @@ footer {
     height: 12vh;
     background-color: rgb(48, 81, 126);
     border-top-style: solid;
-    border-color: gold; 
+    border-color: rgb(255, 215, 0); 
 }
 
 /* Media query: tablets and larger (768px and up) */

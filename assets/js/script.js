@@ -299,7 +299,7 @@ function finalScore() {
     //console.log(finalTally, 'final-score');
 
 
-
+    // Take users name to personalise completion message
     const name = document.getElementById('name').value;
     console.log('users name is', name);
     const insertName = document.getElementById('insert-name');
