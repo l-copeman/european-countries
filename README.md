@@ -1,8 +1,8 @@
-# European Cities
+# European Countries Challenge
 
 Welcome user,
 
-European Cities has been created to test the users knowledge of capital cities in Europe. Upon entering the page the user is asked to enter their name and click start to begin the game. The game will randomly select 10 questions from a list to ask the user. One question is displayed at a time, with an answer box to enter the answer. The score is shown at the bottom of the page. After completing 10 questions, the users final score is shown along with a personalised message.
+European Countries Challenge has been created to test the users knowledge of capital cities in Europe. Upon entering the page the user is asked to enter their name and click start to begin the game. The game will randomly select 10 questions from a list to ask the user. One question is displayed at a time, with an answer box to enter the answer. The score is shown at the bottom of the page. After completing 10 questions, the users final score is shown along with a personalised message.
 
 The site can be accessed by this [link](https://l-copeman.github.io/european-countries/index.html)
 
