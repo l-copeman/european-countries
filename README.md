@@ -134,13 +134,19 @@ The site can be accessed by this [link](https://l-copeman.github.io/european-cou
 
 ![Wireframe](documentation/wireframe.jpeg)
 
+### Workflow
+
+* I used Miro to create a workflow of my idea
+
+![Wireframe](documentation/workflow.jpeg)
+
 ---
 
 ## Testing
 
 ### Compatibility
 
-In order to confirm the correct functionality, responsiveness and appearance the gane was tested on: 
+In order to confirm the correct functionality, responsiveness and appearance the game was tested on: 
 
 * Chrome
 
@@ -197,21 +203,7 @@ No errors or warnings were found when passing through the official jshint valida
 
 ### Lighthouse Report
 
-* #### Home Page
-
-![Home Lighthouse Report](documentation/home-light.jpeg)
-
-* #### Classes Page
-
-![Classes Lighthouse Report](documentation/class-light.jpeg)
-
-* #### Sign-up Page
-
-![Sign-up Lighthouse Report](documentation/signup-light.jpeg)
-
-* #### Responses Page
-
-![Responses Lighthouse Report](documentation/responses-light.jpeg)
+![Lighthouse Report](documentation/lighthouse-report.jpeg)
 
 ---
 
@@ -219,49 +211,42 @@ No errors or warnings were found when passing through the official jshint valida
 
 Maunal tests carried out by multiple users:
 
-* Home link
-* Classes link
-* Sign-up link
-* Facebook link
-* X link
-* Instagram link
-* Monday link
-* Tuesday link
-* Wednesday link
-* Thursday link
-* Friday link
-* Boppin' Tots webpage link
-* Tappy Toes Dance link
-* Wriggle and Rhyme link
-* Little Theatre on The Hill link
-* La Ola Spanish link
-* First name required
-* Second name required
-* Email required
-* Age of children required
-* Submit link 
-* Back to Home Page link   
-
+* The name can be entered into the name input field
+* If no name is entered, an alert pops-up to remind the user to enter a name
+* The button labeled 'Start' begins the game
+* The button labeled 'Start' has hover styling when the cursor is on it
+* Answers can be entered in the answer input field
+* If no answer is entered, an alert pops-up to remind the user to enter an answer
+* All cases of answers are accepted; lowercase, uppercase, camelCase.
+* The submit input can be clicked to check the users answer
+* The submit input has hover styling, when the cursor is on it
+* Answers can also be checked using the 'Enter' key
+* The answer field is emptied after each question, so the user doesn't need to delete the previous answer
+* The correct and incorrect scores are talleyed as the game progresses. 
+* No questions are repeated during the cycle of the game
+* The game ends after 10 questions have been asked
+* A personalised message is displayed with the users final correct score
+* The users name is displayed in capital letters, regardless of how it was entered in the name field
+* The 'Play Again' button takes the user back to the start of the game to repeat the game
+* The 'Play Again' button has hover styling when the cursor is on it
+* A different selection of questions are asked when the game is played again
+* Authors GitHub page loads in a new page, from the link in the footer
+* The GitHub logo has hover properties when the cursor is on it
+  
 ### Bugs
 
 #### Solved bugs
 
-* As I was testing the responsiveness for larger phones and above, I noticed the title in the header wrapped onto one line, hence revealing white space between the header and main section. To resolve this I had to change the marin-top of the main section to reduce this space.
+* I noticed that users answers were being marked incorrectly, even when spelt correctly, when they used different capitalisation than the actual answer. To solve this, I first used the `toLowerCase()` method to change the users answer to lowercase. The actual answer was also written in lowercase, this allowed the two answers to be checked regarding spelling, as opposed to different capitalisation. 
 
-* The landing image on the main page was pixelated on larger screen sizes. I had to replace this image with a higher resolutiuon image to solve the issue.
-
-* When checking the html code through the validator, I had an error where there was an `<a>` element within a `<button>` element. This is not good for user accessibility. To resolve this I removed the button element, and just used an `<a>` tag and used CSS styling to get the desired effect.
-
-#### Unresolved bugs
-
-* On the classes page I have the days of the week listed as links to the relevant classes for that day. When clicking on a certain day, it takes you to the section but the title for that day is hidden beneath the header. I would have liked this to be visible. To resolve this I would look at repositioning the target id, so the day of the week heading is visible.
+* When checking the HTML code through the validator, I had errors where the three `<section>` of the game were without headings. I added heaadings for each section, and used the `visibility:hidden` styling property, so the headings were not visible during the game.
 
 ## Deployment
 
 ### Deployment to GitHub Pages
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the [GitHub repository](https://github.com/l-copeman/west-norwood-parenting), navigate to the Settings tab 
+  - In the [GitHub repository](https://github.com/l-copeman/european-countries), navigate to the Settings tab 
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
@@ -271,8 +256,9 @@ The live link can be found [here](https://l-copeman.github.io/european-countries
 
 ## Future Improvements
 
-* I would like to add more classes for each specific day of the week
-* I would like to gain feedback from users experience of the site, and after joining the community. I would look at incorporating this information into the site to show past user experience for new users. 
+* I would like to add more questions, and offer a greater range of topics (different continents and questions regarding national flags).
+* I would like to show the user the correct answer when they have entered an incorrect answer.
+* I would like to change the 'Play Again' button so it takes the user back to the beginning of the game without having to reload the page. I would look to do this by using the `classList.remove/classList.add` method on the elements. This will speed up the loading time and create a better user experience.
 
 ---
 
@@ -280,9 +266,8 @@ The live link can be found [here](https://l-copeman.github.io/european-countries
 
 #### Images
 
-All images were taken from:
-* [Pexels](https://www.pexels.com/)
-* [Unsplash](https://unsplash.com/)
+Image was taken from:
+* [iStock](https://www.istockphoto.com/)
 
 ---
 

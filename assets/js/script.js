@@ -8,7 +8,6 @@ let score = 0;
 
 // Add event listener to to fire when the HTML docuement has fully loaded and parsed 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed");
     // Add event listener to start button and name input to begin game
     const click = document.getElementById('start');
     const name = document.getElementById('name');
@@ -199,7 +198,7 @@ function incorrectTally() {
  * Loads results page, showing users final score
  */
 function finalScore() {
-    let resultsPage = document.getElementById('results-page');
+    const resultsPage = document.getElementById('results-page');
     resultsPage.classList.remove('hide');
     questionPage.classList.add('hide');
     // Add final score to completion message

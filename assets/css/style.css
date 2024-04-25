@@ -166,6 +166,7 @@ h1 {
     display: none;
 }
 
+/* A class to hide the headings of the sections */
 .hidden {
     visibility: hidden;
     font-size: 1px;
